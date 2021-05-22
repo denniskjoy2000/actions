@@ -27,6 +27,7 @@ jobs:
 
   logs-default-env-varaible:
     runs-on: ubuntu-latest
+    needs: [logs_env]
     steps:
       - name: Default Environment Variables
         run: |
