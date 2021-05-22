@@ -3,7 +3,7 @@ name: Context
 on: push
 
 jobs:
- functions:
+  functions:
    runs-on: ubuntu-latest
    steps:
      - name: dump
@@ -12,7 +12,7 @@ jobs:
          echo ${{ startWith('Hello','He') }}  
          echo ${{ endsWith('Hello','lo') }}  
          echo ${{ format('Hello {0} {1} {2}','World','!','!') }}  
-         
+
   one:
     runs-on: ubuntu-latest
     steps:
