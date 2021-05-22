@@ -3,6 +3,16 @@ name: Context
 on: push
 
 jobs:
+ functions:
+   runs-on: ubuntu-latest
+   steps:
+     - name: dump
+       run: |
+         echo ${{ contains('Hello','ll') }}  
+         echo ${{ startWith('Hello','He') }}  
+         echo ${{ endsWith('Hello','lo') }}  
+         echo ${{ format('Hello {0} {1} {2}','World','!','!') }}  
+         
   one:
     runs-on: ubuntu-latest
     steps:
