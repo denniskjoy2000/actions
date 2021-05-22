@@ -3,7 +3,7 @@ name: Environment Variable
 on: push
 
 env:
-  WF_ENV: Available to all jobs
+  WF_ENV: ${{ secrets.SECRET_NAME }}#Available to all jobs
 
 jobs:
   logs_env:
