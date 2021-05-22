@@ -22,7 +22,8 @@ jobs:
         with:
           entrypoint: /usr/local/bin/node
           args: -v
-      - uses: actions/checkout@v1    
+      - uses: actions/checkout@v1
+        run: ls -a    
       - name: Log version with script
         uses: docker://node:15-alpine3.10
         with:
