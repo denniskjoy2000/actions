@@ -20,6 +20,7 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: eccho "$GITHUB_CONTEXT"
+        continue-on-error: true
       - name: Dump job context
         if: failure()
         env:
