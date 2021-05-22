@@ -24,9 +24,9 @@ jobs:
           args: -v
       - uses: actions/checkout@v1
       - name: List
-        run: ls -a    
+        run: ls .github/workflow -a    
       - name: Log version with script
         uses: docker://node:15-alpine3.10
         with:
-          entrypoint: ./script.sh
+          entrypoint: .github/workflow/script.sh
           args: "My beautiful World"
