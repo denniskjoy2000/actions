@@ -4,12 +4,18 @@ on: push
 
 jobs:
   node-version:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+        node-version: [10,12,14]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Log node version
         run: node -v 
       - uses: actions/setup-node@v2
         with:
-          node-version: '12.x'
+          node-version: ${{ matrix.node-version }}
       - name: Log node version after
         run: node -v           
+
+      
