@@ -24,7 +24,7 @@ jobs:
           args: -v
       - uses: actions/checkout@v1
       - name: List
-        run: chmod + ./script.sh    
+        run: chmod +x ./script.sh    
       - name: Log version with script
         uses: docker://node:15-alpine3.10
         with:
