@@ -3,8 +3,7 @@ name: Actions Workflow
 on: 
   schedule:
     - cron: "0/5 * * * *"
-    - cron: "0/6 * * * *"
-
+    
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
