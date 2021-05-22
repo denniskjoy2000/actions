@@ -29,6 +29,6 @@ jobs:
       - name: Log node version after
         run: |
           node -v
-          echo IS_UBUNTU_12           
+          echo $IS_UBUNTU_12           
 
       
