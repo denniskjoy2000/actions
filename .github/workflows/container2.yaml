@@ -1,0 +1,24 @@
+name: Container
+
+on: push
+
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: node:16-alpine3.12
+    steps:
+      - name: Log node version
+        run: |
+          node -v
+          cat /etc/os-release  
+      - name: Step with node-docker
+        uses: docker://node:15-alpine3.10
+        with:
+          entrypoint: "/bin/echo"
+          args: 'Hello World'    
+      - name: Log version with node-docker
+        uses: docker://node:15-alpine3.10
+        with:
+          entrypoint: /usr/local/bin/node
+          args: -v
