@@ -1,8 +1,10 @@
 name: Actions Workflow
 
 on: 
-  schedule:
-    - cron: "0/5 * * * *"
+  repository_dispatch:
+    types: [build]
+#  schedule:
+#    - cron: "0/5 * * * *"
     
 jobs:
   run-github-actions:
