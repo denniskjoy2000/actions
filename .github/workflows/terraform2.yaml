@@ -2,23 +2,6 @@ name: 'Terraform GitHub Actions'
 on:
   - push
 jobs:
-  terraform-build:
-    runs-on: ubuntu-latest
-    container:  #https://hub.docker.com/r/hashicorp/terraform/tags?page=1&ordering=last_updated
-      image: hashicorp/terraform:0.15.2       #:latest
-    steps:
-      - name: 'Checkout'
-        uses: actions/checkout@master
-      - name: 'Terraform version'
-        run: |
-          terraform -version
-      - name: 'Terraform init'
-        run: |
-          terraform init
-      - name: 'Terraform apply'
-        run: |
-          terraform apply --auto-approve
-
   test:
     name: Test
     runs-on: ubuntu-latest

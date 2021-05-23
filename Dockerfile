@@ -28,8 +28,6 @@ RUN apk --no-cache add \
     pip3 install --upgrade pip wheel && \
     pip3 install --upgrade cryptography cffi && \
     pip3 install ansible==2.10.7 && \
-    pip3 install mitogen ansible-lint jmespath && \
-    pip3 install --upgrade pywinrm && \
     apk del build-dependencies && \
     rm -rf /var/cache/apk/* && \
     rm -rf /root/.cache/pip && \
