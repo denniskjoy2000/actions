@@ -8,9 +8,9 @@ ENV pip_packages "ansible"
 # Install dependencies.
 RUN CARGO_NET_GIT_FETCH_WITH_CLI=1 && \
     apk --no-cache add \
-        pip \
         python3\
         git && \
+    pip install --upgrade pip wheel && \        
     pip install ansible && \
     rm -rf /var/cache/apk/* && \
     rm -rf /root/.cache/pip && \
