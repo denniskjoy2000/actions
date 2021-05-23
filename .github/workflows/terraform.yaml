@@ -3,7 +3,6 @@ on:
   - push
 jobs:
   terraform:
-    name: 'Terraform'
     runs-on: ubuntu-latest
     container:
       image: hashicorp/terraform:latest
@@ -13,4 +12,5 @@ jobs:
       - name: 'Terraform'
         run: |
           terraform -version
+          terraform init
 
