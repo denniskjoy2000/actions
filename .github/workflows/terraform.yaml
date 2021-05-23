@@ -19,7 +19,21 @@ jobs:
         run: |
           terraform apply --auto-approve
 
+  test:
+    name: Test
+    runs-on: ubuntu-latest
 
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Test building image.
+        run: docker build -t docker-ansible .
+
+      - name: Run the built image.
+        run: docker run --name test-container -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-ansible
+
+      - name: Verify Ansible is accessible in the built image.
+        run: docker exec --tty test-container env TERM=xterm ansible --version
 
 
         

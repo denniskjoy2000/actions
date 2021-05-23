@@ -1,4 +1,0 @@
-name: Ansible Docker 
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
