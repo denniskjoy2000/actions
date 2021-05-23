@@ -1,15 +1,15 @@
-name: Container
+name: Secret
 
 on: push
 
 env:
-  WF_ENV: Beautiful World # ${{ secrets.SECRET_NAME }}
+  WF_ENV: ${{ secrets.MY_SECRET }}
 
 jobs:
   node-docker:
     runs-on: ubuntu-latest
     steps:
-      - name: Log node version
+      - name: Log secret 
         run: |
           echo ${WF_ENV}
  
