@@ -5,7 +5,7 @@ jobs:
   terraform-build:
     runs-on: ubuntu-latest
     container:
-      image: hashicorp/terraform:@15.0.1
+      image: hashicorp/terraform@15.0.1       #:latest
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
