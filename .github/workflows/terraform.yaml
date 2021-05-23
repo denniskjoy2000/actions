@@ -20,9 +20,7 @@ jobs:
           terraform apply --auto-approve
 
 
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
+
 
         
 
