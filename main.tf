@@ -7,7 +7,7 @@ locals {
 
 variable "listval" {
   type = list
-  default = ["a",5,true]
+  default = ["a",5,true,"new"]
 }
 
 output "lcl" {
