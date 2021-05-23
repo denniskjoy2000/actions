@@ -2,15 +2,20 @@ name: 'Terraform GitHub Actions'
 on:
   - push
 jobs:
-  terraform:
+  terraform-build:
     runs-on: ubuntu-latest
     container:
       image: hashicorp/terraform:latest
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
-      - name: 'Terraform'
+      - name: 'Terraform version'
         run: |
           terraform -version
+      - name: 'Terraform init'
+        run: |
           terraform init
+      - name: 'Terraform apply'
+        run: |
+          terraform apply
 
