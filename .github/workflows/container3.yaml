@@ -2,6 +2,9 @@ name: Container
 
 on: push
 
+env:
+  WF_ENV: ${{ secrets.SECRET_NAME }}
+
 jobs:
   node-docker:
     runs-on: ubuntu-latest
@@ -12,6 +15,7 @@ jobs:
         run: |
           node -v
           cat /etc/os-release  
+          echo $WF_ENV
       - name: Step with node-docker
         uses: docker://node:15-alpine3.10
         with:
@@ -30,3 +34,8 @@ jobs:
         with:
           entrypoint: ./script.sh
           args: "My beautiful World"
+#      - name: Slack
+#        uses: docker://technosophos/slack-notify
+#        env:
+#          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+#          SLACK_MESSAGE: "Hello Slack"    
