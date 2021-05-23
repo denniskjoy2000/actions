@@ -3,7 +3,7 @@ name: Container
 on: push
 
 env:
-  WF_ENV: ${{ secrets.SECRET_NAME }}
+  WF_ENV: Beautiful World # ${{ secrets.SECRET_NAME }}
 
 jobs:
   node-docker:
