@@ -15,7 +15,7 @@ jobs:
         run: |
           node -v
           cat /etc/os-release  
-          echo $WF_ENV
+          echo ${WF_ENV}
       - name: Step with node-docker
         uses: docker://node:15-alpine3.10
         with:
