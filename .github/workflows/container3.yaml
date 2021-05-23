@@ -8,34 +8,8 @@ env:
 jobs:
   node-docker:
     runs-on: ubuntu-latest
-    container:
-      image: node:16-alpine3.12
     steps:
       - name: Log node version
         run: |
-          node -v
-          cat /etc/os-release  
           echo ${WF_ENV}
-      - name: Step with node-docker
-        uses: docker://node:15-alpine3.10
-        with:
-          entrypoint: "/bin/echo"
-          args: 'Hello World'    
-      - name: Log version with node-docker
-        uses: docker://node:15-alpine3.10
-        with:
-          entrypoint: /usr/local/bin/node
-          args: -v
-      - uses: actions/checkout@v1
-      - name: List
-        run: chmod +x ./script.sh    
-      - name: Log version with script
-        uses: docker://node:15-alpine3.10
-        with:
-          entrypoint: ./script.sh
-          args: "My beautiful World"
-#      - name: Slack
-#        uses: docker://technosophos/slack-notify
-#        env:
-#          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-#          SLACK_MESSAGE: "Hello Slack"    
+ 
