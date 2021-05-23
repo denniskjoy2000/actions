@@ -21,11 +21,12 @@ jobs:
 
   ansible-build:
     runs-on: ubuntu-latest
-    container:  
-      image: ansible/ansible:ubuntu1604
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@master
+      - name: Docker 
+        uses: docker
+        with:
+          context: ./
+          file: Dockerfile
       - name: 'ansible version'
         run: |
           ansible --version
