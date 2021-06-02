@@ -17,5 +17,8 @@ jobs:
           --header 'accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json' \
           --data '{
-            "event_type": "build"
+            "event_type": "build",
+            "client_payload":{
+               "env": "production"
+              }
             }'
