@@ -12,7 +12,7 @@ jobs:
       - name: Create issue using REST API
         run: |
           curl --request POST \
-          --url https://api.github.com/repos/denniskjoy2000/actions/dispatches \
+          --url https://api.github.com/repos/${{ github.repository }}/dispatches \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json' \
