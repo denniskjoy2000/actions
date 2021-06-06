@@ -10,7 +10,5 @@ jobs:
       options: -v .:/app
     steps:
       - name: call dockerfile
-        env:
-          - WDIR: /app
         run: |
           terraform init
