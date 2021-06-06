@@ -9,7 +9,7 @@ jobs:
       image: denniskjoy/tfa:latest
       env:
         WDIR: /app
-        : ${GITHUB_WORKSPACE}
+        CDIR : ${GITHUB_WORKSPACE}
  #     options: -v .:/app
       volumes:
         - CDIR:/app  
