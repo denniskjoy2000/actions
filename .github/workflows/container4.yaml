@@ -15,9 +15,8 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
-        run: |
-         ls -a
       - name: call dockerfile
         run: |
           terraform init
+          ls -a
    
