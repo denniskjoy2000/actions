@@ -9,15 +9,14 @@ jobs:
       image: denniskjoy/tfa:latest
       env:
         WDIR: /app
-        CDIR : ${GITHUB_WORKSPACE}
  #     options: -v .:/app
       volumes:
-        - /home/runner/work/actions/actions:/app  
+        - /usr/bin/docker:/app  
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
       - name: call dockerfile
         run: |
           terraform init
-          echo "${CDIR}"
+          echo "${GITHUB_WORKSPACE}"
    
