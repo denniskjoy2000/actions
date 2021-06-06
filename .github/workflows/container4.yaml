@@ -7,12 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: denniskjoy/tfa:latest
-      options: -v .:/app
+      env:
+        WDIR: /app
+ #     options: -v .:/app
+      volumes:
+        - .:/app  
     steps:
       - name: call dockerfile
-        env:
-          WDIR: /app
-        volumes:
-          - .:/app  
         run: |
           terraform init
