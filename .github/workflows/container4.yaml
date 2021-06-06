@@ -10,8 +10,8 @@ jobs:
       env:
         WDIR: /app
  #     options: -v .:/app
- #     volumes:
- #       - .:/app  
+      volumes:
+        - .:/app  
     steps:
       - name: call dockerfile
         run: |
