@@ -20,6 +20,6 @@ jobs:
           terraform init
       - name: terrafrom apply
         run: |
-          terraform apply
+          terraform apply --auto-approve
 
    
