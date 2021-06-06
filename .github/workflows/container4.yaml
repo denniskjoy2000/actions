@@ -8,10 +8,10 @@ jobs:
     container:
       image: denniskjoy/tfa:latest
       env:
-        WDIR: /app
-      options: -v .:/app
- #     volumes:
- #       - .:/app  
+        WDIR: /application
+ #     options: -v .:/app
+      volumes:
+        - .:/application  
     steps:
       - name: call dockerfile
         run: |
