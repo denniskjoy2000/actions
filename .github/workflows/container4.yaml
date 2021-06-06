@@ -12,5 +12,7 @@ jobs:
       - name: call dockerfile
         env:
           WDIR: /app
+        volumes:
+          - .:/app  
         run: |
           terraform init
