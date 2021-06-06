@@ -9,9 +9,9 @@ jobs:
       image: denniskjoy/tfa:latest
       env:
         WDIR: /app
- #     options: -v .:/app
-      volumes:
-        - .:/app  
+      options: -v .:/app
+ #     volumes:
+ #       - .:/app  
     steps:
       - name: call dockerfile
         run: |
