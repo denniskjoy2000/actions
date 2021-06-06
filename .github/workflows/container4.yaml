@@ -11,12 +11,11 @@ jobs:
         WDIR: /app
  #     options: -v .:/app
       volumes:
-        - /usr/bin/docker:/app  
+        - /home/runner/work/actions/actions:/app  
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
       - name: call dockerfile
         run: |
           terraform init
-          echo "${GITHUB_WORKSPACE}"
    
