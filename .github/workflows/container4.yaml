@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: call dockerfile
         run: |
-          terraform init
+          terraform validate
