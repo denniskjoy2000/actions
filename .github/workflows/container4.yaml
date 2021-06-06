@@ -16,3 +16,9 @@ jobs:
       - name: call dockerfile
         run: |
           terraform init
+          ls ${HOME}
+      - name: call dockerfile2
+        run: |
+          echo "GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}"           
+          echo "GITHUB_ACTION: ${GITHUB_ACTION}"           
+          echo "GITHUB_ACTIONS: ${GITHUB_ACTIONS}"    
