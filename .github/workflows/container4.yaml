@@ -11,7 +11,7 @@ jobs:
         WDIR: /app
  #     options: -v .:/app
       volumes:
-        - .:/app  
+        - /home/runner/work/_actions:/app  
     steps:
       - name: call dockerfile
         run: |
